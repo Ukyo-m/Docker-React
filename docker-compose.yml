@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+    react:
+        build: .
+        ports:
+            - 3000:3000
+        volumes:
+            - ./app:/app
+        tty: true
+        stdin_open: true
+        user: "${UID}:${GID}"
+        command: yarn dev
